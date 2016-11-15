@@ -1,0 +1,11 @@
+{
+   "gremlins" : [
+       {
+	   "scenario" : "delay_requests",
+	   "source" : "frontservice",
+	   "dest" : "eventservice",
+	   "headerpattern" : "testUser-timeout-*",
+	   "delaytime" : "8s"
+       }
+   ]
+}

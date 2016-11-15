@@ -1,0 +1,11 @@
+{
+    "log_server" : "localhost:29200",
+    "checks" : [
+	{
+	    "name" : "bounded_response_time",
+	    "source" : "frontservice",
+	    "dest" : "eventservice",
+	    "max_latency" : "100ms"
+	}
+    ]
+}

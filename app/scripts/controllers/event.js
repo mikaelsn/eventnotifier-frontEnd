@@ -10,15 +10,14 @@
 angular.module('angularnodedockApp')
   .controller('EventCtrl', ['$scope', '$http', '$q', function ($scope, $http, $q) {
 
-      var deferred = $q.defer();
-      $http.get('http://localhost:8080/items')
+    var deferred = $q.defer();
+    $http.get('http://localhost:8080/items', { timeout: 90000 })
       .then(function successCallback(response) {
-        console.log(response);
-        deferred.resolve($scope.events = angular.fromJson(response.data.items));
+        deferred.resolve($scope.events = angular.fromJson(response.data));
       }, function errorCallback(error) {
         console.log(error);
-        deferred.resolve($scope.events = angular.fromJson({}));
+        deferred.reject($scope.events = false);
       });
-      return deferred.promise;
+    return deferred.promise;
 
   }]);

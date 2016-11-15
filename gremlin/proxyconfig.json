@@ -1,0 +1,25 @@
+{
+ "services": [
+    {
+      "name": "eventservice",
+      "proxy": {
+        "port": 7777,
+        "protocol": "http"
+      },
+      "loadbalancer": {
+        "hosts": [
+          "localhost:8080"
+        ],
+        "mode": "roundrobin"
+      }
+    }
+  ],
+  "router": {
+      "name": "frontservice",
+      "port": 9876,
+      "trackingheader": "X-Gremlin-ID"
+  },
+  "loglevel" : "debug",
+  "logjson": true,
+  "logstash": "localhost:8092"
+}
