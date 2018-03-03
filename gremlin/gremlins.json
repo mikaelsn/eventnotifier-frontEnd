@@ -1,11 +1,14 @@
 {
-   "gremlins" : [
-       {
-	   "scenario" : "delay_requests",
-	   "source" : "frontservice",
-	   "dest" : "eventservice",
-	   "headerpattern" : "testUser-timeout-*",
-	   "delaytime" : "8s"
-       }
-   ]
+	"gremlins": [
+		{
+			"scenario": "overload_service",
+			"source": "eventservice",
+			"dest": "emailservice",
+			"headerpattern": "circuitBreaker",
+			"delaytime": "3s",
+			"delayprobability": 0.4,
+			"aborprobability": 0.4,
+			"errorcode": 503
+		}
+	]
 }

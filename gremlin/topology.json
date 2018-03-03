@@ -1,10 +1,10 @@
 {
     "services" : [
-	{ "name": "frontservice", "service_proxies": ["localhost:9876"] },
-	{ "name": "eventservice"}
+	{ "name": "eventservice", "service_proxies": ["localhost:9876"] },
+    { "name": "emailservice"}
     ],
 
     "dependencies" : {
-        "frontservice" : ["eventservice"]
+        "eventservice": ["emailservice"]
     }
 }

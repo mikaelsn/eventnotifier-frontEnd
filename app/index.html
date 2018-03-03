@@ -41,6 +41,7 @@
           <ul class="nav navbar-nav">
             <li ng-class="{ active: isActive('/')}"><a href="#/">Home</a></li>
             <li ng-class="{ active: isActive('/event')}"><a ng-href="#/event">Events</a></li>
+            <li ng-class="{ active: isActive('/login')}"><a ng-href="#/login">Login</a></li>
           </ul>
         </div>
       </div>
@@ -89,6 +90,9 @@
   <script src="scripts/controllers/about.js"></script>
   <script src="scripts/controllers/event.js"></script>
   <script src="scripts/controllers/login.js"></script>
+  <script src="scripts/services/userservice.js"></script>
+  <script src="scripts/services/authenticationservice.js"></script>
+  <script src="scripts/services/flashservice.js"></script>
   <!-- endbuild -->
 </body>
 

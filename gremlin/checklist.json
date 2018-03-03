@@ -1,11 +1,13 @@
 {
-    "log_server" : "localhost:29200",
-    "checks" : [
-	{
-	    "name" : "bounded_response_time",
-	    "source" : "frontservice",
-	    "dest" : "eventservice",
-	    "max_latency" : "100ms"
-	}
-    ]
+	"log_server": "localhost:29200",
+	"checks": [
+		{
+			"name": "circuit_breaker",
+			"source": "eventservice",
+			"dest": "emailservice",
+			"reset_time": "15000ms",
+			"closed_attempts": 75,
+			"headerprefix": "circuitBreaker"
+		}
+	]
 }
